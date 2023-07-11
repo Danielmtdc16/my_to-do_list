@@ -1,7 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     font-family: 'Poppins',sans-serif;
+}
+
+body {
+    background-color: #262626;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 60px;
+}
+
+.title span {
+    color: #463EB6;
+    font-weight: 600;
+}
+
+.container {
+    background-color: #18181B;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 20px;
+    width: 600px;
+}
+
+.task {
+    display: flex;
+    gap: 10px;
+    height: 40px;
+}
+
+.input-task {
+    background-color: #262626;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    font-weight: 300;
+    padding: 0 15px;
+    width: 80%;
+}
+.input-task:focus {
+    border: 1.4px solid #463EB6;
+    outline: 0;
+}
+.input-task::placeholder {
+    font-weight: 400;
+}
+
+.button-task {
+    background-color: #463EB6;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 20%;
+}
+.button-task:hover {
+    background-color: #6760c5;
+}
+.button-task .icon {
+    font-size: 16px;
+    margin-top: -2px;
+}
+
+.to-do-list {
+    list-style: none;
 }
