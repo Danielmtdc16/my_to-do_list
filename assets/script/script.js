@@ -4,11 +4,23 @@ const button = document.querySelector(".button-task");
 
 const arrayTask = [];
 
+if (arrayTask.length == 0) {
+    list_task.innerHTML = `
+        <div class="no-chores">
+            <i class="uil uil-clipboard-notes icon-no-chores"></i>
+            <p class="text-no-chores">
+                Sem tarefas :/
+            </p>
+        </div>
+    `;
+}
+
 function addTask() {
     if (input.value == "") alert("Adicione um texto!");
     else {
         arrayTask.push(input.value);
         showATask();
+        input.value = "";
     }
 }
 
@@ -24,8 +36,17 @@ function showATask() {
 
 function deleteTask(index) {
     arrayTask.splice(index, 1);
-    
     showATask();
+    if (arrayTask.length == 0) {
+        list_task.innerHTML = `
+            <div class="no-chores">
+                <i class="uil uil-clipboard-notes icon-no-chores"></i>
+                <p class="text-no-chores">
+                    Sem tarefas :/
+                </p>
+            </div>
+        `;
+    }
 }
 
 button.addEventListener('click', addTask);
