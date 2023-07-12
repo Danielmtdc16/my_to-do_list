@@ -6,19 +6,26 @@ const arrayTask = [];
 
 function addTask() {
     if (input.value == "") alert("Adicione um texto!");
-    else arrayTask.push(input.value);
-    
-    showATask();
+    else {
+        arrayTask.push(input.value);
+        showATask();
+    }
 }
 
 function showATask() {
     let newLi = "";
-    arrayTask.forEach(element => {
+    arrayTask.forEach((element, index) => {
         newLi = newLi + `
-        <li class="task"><i class="uil uil-check-circle check icon-task"></i>${element}<i class="uil uil-trash-alt delete icon-task"></i></li>
+        <li class="task"><i class="uil uil-check-circle check icon-task"></i>${element}<i class="uil uil-trash-alt delete icon-task" onclick="deleteTask(${index})"></i></li>
         `;
     });
     list_task.innerHTML = newLi;
+}
+
+function deleteTask(index) {
+    arrayTask.splice(index, 1);
+    
+    showATask();
 }
 
 button.addEventListener('click', addTask);
