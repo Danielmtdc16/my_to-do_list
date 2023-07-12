@@ -91,6 +91,7 @@ body {
     justify-content: space-between;
     padding: 15px;
     cursor: pointer;
+    margin-top: 15px;
 }
 .task .check {
     color: #463EB6;
