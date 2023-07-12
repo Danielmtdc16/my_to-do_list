@@ -98,5 +98,10 @@ body {
     color: #7c7b7b;
 }
 .icon-task {
+    opacity: 0;
+    transition: .5s;
     font-size: 23px;
+}
+.task:hover .icon-task {
+    opacity: 1;
 }
