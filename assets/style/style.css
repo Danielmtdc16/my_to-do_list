@@ -115,6 +115,9 @@ body {
 .task .delete {
     color: #7c7b7b;
 }
+.task .delete:hover {
+    color: rgb(190, 29, 29);
+}
 .icon-task {
     opacity: 0;
     transition: .5s;
