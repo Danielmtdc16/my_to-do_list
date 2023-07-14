@@ -108,6 +108,7 @@ body {
     padding: 15px;
     cursor: pointer;
     margin-top: 15px;
+    word-break: break-all;
 }
 .task .check {
     color: #463EB6;
@@ -130,3 +131,74 @@ body {
     background-color:#2f2f30;
     text-decoration: line-through;
 }
+
+@media (max-width: 669px) {
+    .container {
+        width: 500px;
+    }
+    .button-task {
+        font-size: 12px;
+        gap: 5px;
+    }
+    .button-task .icon {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 400px;
+    }
+    .icon-no-chores {
+        font-size: 30px;
+    }
+    .text-no-chores {
+        font-size: 15px;
+    }
+    .task {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 470px) {
+    .container {
+        width: 300px;
+    }
+    .input-task {
+        font-size: 13px;
+    }
+    .button-task p {
+        display: none;
+    }
+    .button-task .icon {
+        font-size: 18px;
+    }
+    .task {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 375px) {
+    .container {
+        width: 200px;
+    }
+    .input-task {
+        font-size: 12px;
+    }
+    .task {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 261px) {
+    .title {
+        font-size: 20px;
+    }
+    .container {
+        width: 180px;
+    }
+    .button-task .icon {
+        font-size: 16px;
+    }
+}
+
