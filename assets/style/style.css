@@ -126,3 +126,7 @@ body {
 .task:hover .icon-task {
     opacity: 1;
 }
+.concluded {
+    background-color:#2f2f30;
+    text-decoration: line-through;
+}

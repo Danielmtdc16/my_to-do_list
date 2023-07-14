@@ -31,15 +31,9 @@ function addTask() {
 function showATask() {
     let newLi = "";
     arrayTask.forEach((element, index) => {
-        if (element.concluded == true) {
-            newLi = newLi + `
-            <li class="task" style="background-color:#2f2f30"><i class="uil uil-check-circle check icon-task" onclick="conclude(${index})"></i><s>${element.text}</s><i class="uil uil-trash-alt delete icon-task" onclick="deleteTask(${index})"></i></li>
-            `;
-        } else {
-            newLi = newLi + `
-            <li class="task"><i class="uil uil-check-circle check icon-task" onclick="conclude(${index})"></i>${element.text}<i class="uil uil-trash-alt delete icon-task" onclick="deleteTask(${index})"></i></li>
-            `;
-        }
+        newLi = newLi + `
+        <li class="task ${element.concluded && "concluded"}"><i class="uil uil-check-circle check icon-task" onclick="conclude(${index})"></i>${element.text}<i class="uil uil-trash-alt delete icon-task" onclick="deleteTask(${index})"></i></li>
+        `;
     });
     list_task.innerHTML = newLi;
 }
@@ -60,10 +54,7 @@ function deleteTask(index) {
 }
 
 function conclude(index) {
-    let task = arrayTask[index];
-    task.concluded = true;
-    arrayTask.splice(index, 1);
-    arrayTask.push(task);
+    arrayTask[index].concluded = !arrayTask[index].concluded;
     showATask();
 }
 
