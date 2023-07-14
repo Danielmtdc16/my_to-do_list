@@ -29,6 +29,7 @@ function addTask() {
 }
 
 function showATask() {
+    organize();
     let newLi = "";
     arrayTask.forEach((element, index) => {
         newLi = newLi + `
@@ -58,5 +59,16 @@ function conclude(index) {
     showATask();
 }
 
+function organize() {
+    for (i = 0; i < arrayTask.length; i++) {
+        arrayTask.forEach((element, index) => {
+            if (element.concluded == true) {
+                let task = element;
+                arrayTask.splice(index, 1);
+                arrayTask.push(task);
+            }
+        })
+    }
+}
 
 button.addEventListener('click', addTask);
