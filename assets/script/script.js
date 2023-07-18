@@ -2,18 +2,7 @@ const list_task = document.querySelector(".to-do-list");
 const input = document.querySelector(".input-task");
 const button = document.querySelector(".button-task");
 
-const arrayTask = [];
-
-if (arrayTask.length == 0) {
-    list_task.innerHTML = `
-        <div class="no-chores">
-            <i class="uil uil-clipboard-notes icon-no-chores"></i>
-            <p class="text-no-chores">
-                Sem tarefas :/
-            </p>
-        </div>
-    `;
-}
+let arrayTask = [];
 
 function addTask() {
     let task = {
@@ -37,12 +26,10 @@ function showATask() {
         `;
     });
     list_task.innerHTML = newLi;
-}
 
-function deleteTask(index) {
-    arrayTask.splice(index, 1);
-    showATask();
-    if (arrayTask.length == 0) {
+    localStorage.setItem('list', JSON.stringify(arrayTask));
+
+    if (arrayTask.length === 0) {
         list_task.innerHTML = `
             <div class="no-chores">
                 <i class="uil uil-clipboard-notes icon-no-chores"></i>
@@ -52,6 +39,11 @@ function deleteTask(index) {
             </div>
         `;
     }
+}
+
+function deleteTask(index) {
+    arrayTask.splice(index, 1);
+    showATask();
 }
 
 function conclude(index) {
@@ -71,4 +63,15 @@ function organize() {
     }
 }
 
+function reloadTasks() {
+    let localStorageTasks = localStorage.getItem('list');
+    
+    if (localStorageTasks) {
+        arrayTask = JSON.parse(localStorageTasks);
+    }
+
+    showATask();
+}
+
+reloadTasks();
 button.addEventListener('click', addTask);
